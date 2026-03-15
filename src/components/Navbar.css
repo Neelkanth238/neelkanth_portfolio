@@ -1,0 +1,269 @@
+:root {
+  --on-yellow: #FCED16;
+  --on-white: #eeeeee;
+}
+
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  position: relative;
+  padding: 0.3rem;
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.nav-container.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(50px) saturate(190%) contrast(110%);
+  -webkit-backdrop-filter: blur(50px) saturate(190%) contrast(110%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.05),
+    0 10px 40px rgba(0, 0, 0, 0.08),
+    inset 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.logo-block {
+  background-color: var(--on-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(252, 237, 22, 0.2);
+}
+
+
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: #000;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  position: relative;
+  z-index: 3;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-pill {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+}
+
+.is-scrolled .nav-pill {
+  background: transparent;
+  backdrop-filter: none;
+  border-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.1rem;
+  position: relative;
+}
+
+.nav-a {
+  padding: 0.6rem 1.4rem;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.nav-label {
+  position: relative;
+  z-index: 2;
+  transition: color 0.1s ease;
+}
+
+.nav-pill-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  border-radius: 100px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+/* Ensure text is black WHENEVER the pill is supposed to be present */
+.nav-a.has-pill .nav-label {
+  color: #000 !important;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-cta {
+  background: #000;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  border: 1px solid #000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease);
+}
+
+.cta-text {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--on-yellow);
+  line-height: 1;
+  position: relative;
+  z-index: 3;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cta-dot-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+  z-index: 3;
+}
+
+.cta-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--on-yellow);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav-a.active .mobile-nav-text {
+  background: #fff;
+  padding: 0 1rem;
+  border-radius: 100px;
+}
+
+.mobile-menu-trigger {
+  display: none;
+  background: var(--on-yellow);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+}
+
+.bento-grid span {
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 1px;
+}
+
+/* Animations for Bento hover (Handled in JSX but CSS can help) */
+.mobile-menu-trigger:hover .bento-grid span:nth-child(odd) {
+  transform: scale(1.2);
+}
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(252, 237, 22, 0.7);
+  backdrop-filter: blur(60px) saturate(200%);
+  -webkit-backdrop-filter: blur(60px) saturate(200%);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-overlay.open {
+  transform: translateY(0);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobile-nav-a {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav-a:hover {
+  transform: skewX(-10deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .nav-center, .nav-cta {
+    display: none;
+  }
+  .mobile-menu-trigger {
+    display: flex;
+  }
+}

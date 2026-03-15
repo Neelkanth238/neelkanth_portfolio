@@ -1,0 +1,183 @@
+.about-header-v4 {
+  padding: 8rem 0 4rem;
+}
+
+.bento-grid-about {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1px;
+  background-color: var(--border-color);
+  border: var(--hairline);
+  margin-bottom: 4rem;
+}
+
+.bento-item {
+  background-color: var(--bg-color);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-item.no-padding {
+  padding: 0;
+}
+
+.bento-item.dark-cell {
+  background-color: var(--text-color);
+  color: white;
+}
+
+.bento-item.accent-cell {
+  background-color: var(--accent-warm);
+  color: white;
+}
+
+.white-text {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+/* Specific Grid Spans */
+.col-span-12 { grid-column: span 12; }
+.col-span-8 { grid-column: span 8; }
+.col-span-6 { grid-column: span 6; }
+.col-span-5 { grid-column: span 5; }
+.col-span-4 { grid-column: span 4; }
+.col-span-3 { grid-column: span 3; }
+.col-span-2 { grid-column: span 2; }
+.row-span-2 { grid-row: span 2; }
+
+/* Image Wrapper */
+.bento-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.bento-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+
+.bento-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Info List Style (Experience/Edu) */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: padding-left 0.4s var(--ease);
+}
+
+.info-row:hover {
+  padding-left: 0.5rem;
+}
+
+.dark-cell .info-row {
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+.info-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.info-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.info-meta {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+/* Stats Cell */
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Skills Grid in Bento */
+.skills-grid-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.skill-cat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cat-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.35);
+}
+
+.skill-cat-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .bento-grid-about {
+    grid-template-columns: 1fr;
+  }
+  .col-span-12, .col-span-8, .col-span-6, .col-span-5, .col-span-4, .col-span-3, .col-span-2, .row-span-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .skills-grid-bento {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-header-v4 {
+    padding-top: 10rem;
+  }
+  .skills-grid-bento {
+    grid-template-columns: 1fr;
+  }
+  .bento-item {
+    padding: 2rem;
+  }
+}

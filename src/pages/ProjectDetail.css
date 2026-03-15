@@ -1,0 +1,241 @@
+/* Project Detail v6 - Archive Style */
+
+.pd-v6-layout {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  gap: 6rem;
+}
+
+.pd-v6-left {
+  width: 50%;
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.pd-v6-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.pd-v6-back {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+}
+
+.pd-v6-back:hover {
+  color: var(--text-color);
+}
+
+.pd-v6-index {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-warm);
+}
+
+/* Content */
+.pd-v6-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.pd-v6-subtitle {
+  color: var(--text-muted);
+  font-weight: 400;
+  text-transform: none;
+}
+
+.pd-v6-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: var(--hairline);
+}
+
+.pd-v6-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pd-v6-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.pd-v6-val {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.pd-v6-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.pd-v6-desc {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+.pd-v6-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.pd-v6-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: 4px;
+}
+
+.pd-v6-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pd-v6-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-color);
+}
+
+.pd-v6-link:hover {
+  color: var(--accent-warm);
+}
+
+/* Next Section */
+.pd-v6-next {
+  margin-top: 8rem;
+  cursor: pointer;
+}
+
+.pd-v6-next-line {
+  height: 1px;
+  background-color: var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.pd-v6-next-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  transition: transform 0.4s var(--ease);
+}
+
+.pd-v6-next:hover .pd-v6-next-title {
+  transform: translateX(10px);
+  color: var(--accent-warm);
+}
+
+/* Right Column: Sticky Image */
+.pd-v6-right {
+  width: 50%;
+  position: relative;
+}
+
+.pd-v6-image-wrapper {
+  position: sticky;
+  top: 10rem;
+  height: calc(100vh - 12rem);
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--border-color);
+}
+
+.pd-v6-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+
+.pd-v6-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.pd-v6-empty {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .pd-v6-layout {
+    flex-direction: column;
+    padding-top: 8rem;
+    gap: 3rem;
+  }
+  
+  .pd-v6-left, 
+  .pd-v6-right {
+    width: 100%;
+    padding-right: 0;
+  }
+  
+  .pd-v6-image-wrapper {
+    position: relative;
+    top: 0;
+    height: 60vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .pd-v6-title {
+    font-size: 2.5rem;
+  }
+  .pd-v6-image-wrapper {
+    height: 40vh;
+  }
+}
