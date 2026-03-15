@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
+
 import './Home.css';
 
 export default function Home() {
@@ -22,7 +23,6 @@ export default function Home() {
             whileInView="animate" 
             viewport={{ once: true, amount: 0.1 }}
           >
-            
             <div className="hero-main-typography">
               <h1 className="display-1">
                 Neelkanth <br />
