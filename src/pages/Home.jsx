@@ -16,11 +16,11 @@ export default function Home() {
         <div className="home-bento-grid">
 
           {/* ─── Hero Cell ─── */}
-          <motion.div 
-            className="home-bento-hero" 
-            variants={itemVars} 
-            initial="initial" 
-            whileInView="animate" 
+          <motion.div
+            className="home-bento-hero"
+            variants={itemVars}
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true, amount: 0.1 }}
           >
             <div className="hero-main-typography">
@@ -43,8 +43,8 @@ export default function Home() {
           </motion.div>
 
           {/* ─── System Status Cell ─── */}
-          <motion.div 
-            className="home-bento-info" 
+          <motion.div
+            className="home-bento-info"
             initial={{ opacity: 0, y: 40, scale: 0.97 }}
             whileInView={{ opacity: 1, y: 0, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 } }}
             viewport={{ once: true, amount: 0.1 }}
@@ -61,8 +61,8 @@ export default function Home() {
           </motion.div>
 
           {/* ─── Core Philosophy Cell ─── */}
-          <motion.div 
-            className="home-bento-statement" 
+          <motion.div
+            className="home-bento-statement"
             initial={{ opacity: 0, y: 40, scale: 0.97 }}
             whileInView={{ opacity: 1, y: 0, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 } }}
             viewport={{ once: true, amount: 0.1 }}
@@ -75,8 +75,8 @@ export default function Home() {
           </motion.div>
 
           {/* ─── Call to Action Cell ─── */}
-          <motion.div 
-            className="home-bento-cta" 
+          <motion.div
+            className="home-bento-cta"
             initial={{ opacity: 0, y: 40, scale: 0.97 }}
             whileInView={{ opacity: 1, y: 0, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }}
             viewport={{ once: true, amount: 0.1 }}
@@ -94,43 +94,43 @@ export default function Home() {
           </motion.div>
 
           {/* ─── Featured Projects Cell ─── */}
-          <motion.div 
-            className="home-bento-projects" 
+          <motion.div
+            className="home-bento-projects"
             initial={{ opacity: 0, y: 40, scale: 0.97 }}
             whileInView={{ opacity: 1, y: 0, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 } }}
             viewport={{ once: true, amount: 0.1 }}
           >
-             <span className="section-label">Featured Systems</span>
-             <div className="mini-project-list">
-                <div className="mini-project-row">
-                   <div>
-                      <h3 className="mini-project-title">MRS / Metro Rail System</h3>
-                      <p className="mini-project-role">Full Stack &amp; Android Development</p>
-                   </div>
-                   <span className="mini-project-year">2024</span>
+            <span className="section-label">Featured Systems</span>
+            <div className="mini-project-list">
+              <div className="mini-project-row">
+                <div>
+                  <h3 className="mini-project-title">MRS / Metro Rail System</h3>
+                  <p className="mini-project-role">Full Stack &amp; Android Development</p>
                 </div>
-                <div className="mini-project-row">
-                   <div>
-                      <h3 className="mini-project-title">IMS / Inventory Management</h3>
-                      <p className="mini-project-role">Full Stack Development</p>
-                   </div>
-                   <span className="mini-project-year">2023</span>
+                <span className="mini-project-year">2024</span>
+              </div>
+              <div className="mini-project-row">
+                <div>
+                  <h3 className="mini-project-title">IMS / Inventory Management</h3>
+                  <p className="mini-project-role">Full Stack Development</p>
                 </div>
-                <div className="mini-project-row">
-                   <div>
-                      <h3 className="mini-project-title">CRS / Car Rental System</h3>
-                      <p className="mini-project-role">Full Stack Development</p>
-                   </div>
-                   <span className="mini-project-year">2023</span>
+                <span className="mini-project-year">2023</span>
+              </div>
+              <div className="mini-project-row">
+                <div>
+                  <h3 className="mini-project-title">CRS / Car Rental System</h3>
+                  <p className="mini-project-role">Full Stack Development</p>
                 </div>
-                <div className="mini-project-row">
-                   <div>
-                      <h3 className="mini-project-title">Budget Bloom / Money Management</h3>
-                      <p className="mini-project-role">Frontend Development</p>
-                   </div>
-                   <span className="mini-project-year">2024</span>
+                <span className="mini-project-year">2023</span>
+              </div>
+              <div className="mini-project-row">
+                <div>
+                  <h3 className="mini-project-title">Budget Bloom / Money Management</h3>
+                  <p className="mini-project-role">Frontend Development</p>
                 </div>
-             </div>
+                <span className="mini-project-year">2024</span>
+              </div>
+            </div>
           </motion.div>
 
         </div>
