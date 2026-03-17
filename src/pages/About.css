@@ -23,8 +23,8 @@
 }
 
 .bento-item.dark-cell {
-  background-color: var(--text-color);
-  color: white;
+  background-color: var(--inverted-bg);
+  color: var(--inverted-text);
 }
 
 .bento-item.accent-cell {
@@ -33,7 +33,8 @@
 }
 
 .white-text {
-  color: rgba(255,255,255,0.5) !important;
+  color: var(--inverted-text) !important;
+  opacity: 0.5;
 }
 
 /* Specific Grid Spans */
@@ -78,7 +79,7 @@
   justify-content: space-between;
   align-items: flex-end;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid var(--border-color);
   transition: padding-left 0.4s var(--ease);
 }
 
@@ -87,7 +88,7 @@
 }
 
 .dark-cell .info-row {
-  border-bottom-color: rgba(255,255,255,0.1);
+  border-bottom-color: rgba(var(--bg-color-rgb), 0.1);
 }
 
 .info-title {
@@ -125,7 +126,8 @@
   font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.5);
+  color: inherit;
+  opacity: 0.5;
 }
 
 /* Skills Grid in Bento */
@@ -148,7 +150,8 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.35);
+  color: inherit;
+  opacity: 0.35;
 }
 
 .skill-cat-box p {

@@ -1,10 +1,20 @@
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
+import FloatingLines from '../components/FloatingLines';
+
+import { useTheme } from '../lib/ThemeContext';
 
 import './Home.css';
 
 export default function Home() {
+  const { theme } = useTheme();
+  
+  const isDark = theme === 'dark';
+  const lineColors = isDark 
+    ? ["#ffffff", "#e07a5f", "#ffffff"] 
+    : ["#0d0d0d", "#c45d3e", "#0d0d0d"];
+    
   const itemVars = {
     initial: { opacity: 0, y: 40, scale: 0.97 },
     animate: { opacity: 1, y: 0, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
@@ -12,36 +22,45 @@ export default function Home() {
 
   return (
     <PageTransition>
+      <motion.section
+        className="home-bento-hero-full"
+        variants={itemVars}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        <div className="hero-background">
+          <FloatingLines
+            linesGradient={["#0d0d0d", "#c45d3e", "#0d0d0d"]}
+            lineCount={8}
+            lineDistance={15}
+            animationSpeed={0.4}
+            interactive={true}
+            mixBlendMode="multiply"
+          />
+        </div>
+        
+        <div className="hero-main-typography">
+          <h1 className="display-1">
+            Neelkanth <br />
+            <span className="font-serif">Mayani</span>
+          </h1>
+          <h2 className="display-2" style={{ color: 'var(--text-muted)', marginBottom: 0 }}>
+            Full Stack <span className="font-serif">Developer</span>
+          </h2>
+        </div>
+
+        <div className="hero-sub-row">
+          <div className="line-accent"></div>
+          <p className="paragraph-lg">
+            Engineering robust systems where <span className="font-serif">performant</span> logic
+            meets exceptional design. Bridging the gap between the server and the screen.
+          </p>
+        </div>
+      </motion.section>
+
       <div className="container">
         <div className="home-bento-grid">
-
-          {/* ─── Hero Cell ─── */}
-          <motion.div
-            className="home-bento-hero"
-            variants={itemVars}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            <div className="hero-main-typography">
-              <h1 className="display-1">
-                Neelkanth <br />
-                <span className="font-serif">Mayani</span>
-              </h1>
-              <h2 className="display-2" style={{ color: 'var(--text-muted)', marginBottom: 0 }}>
-                Full Stack <span className="font-serif">Developer</span>
-              </h2>
-            </div>
-
-            <div className="hero-sub-row">
-              <div className="line-accent"></div>
-              <p className="paragraph-lg">
-                Engineering robust systems where <span className="font-serif">performant</span> logic
-                meets exceptional design. Bridging the gap between the server and the screen.
-              </p>
-            </div>
-          </motion.div>
-
           {/* ─── System Status Cell ─── */}
           <motion.div
             className="home-bento-info"
@@ -67,7 +86,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 } }}
             viewport={{ once: true, amount: 0.1 }}
           >
-            <span className="section-label" style={{ color: 'rgba(255,255,255,0.35)' }}>Core Philosophy</span>
+            <span className="section-label" style={{ color: 'inherit', opacity: 0.35 }}>Core Philosophy</span>
             <h2 className="display-2">Unified <br /> <span className="font-serif">Logic</span>.</h2>
             <p>
               A digital product is a singular entity. I don't see frontends or backends — I see integrated systems where data flow and user interaction are one and the same.
@@ -132,9 +151,7 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
-
         </div>
-
       </div>
     </PageTransition>
   );

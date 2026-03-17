@@ -1,0 +1,60 @@
+.theme-toggle-btn {
+  background: var(--bg-color);
+  border: 1.5px solid var(--border-color);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-color);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .theme-toggle-btn {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.theme-icon {
+  position: relative;
+  z-index: 2;
+}
+
+.sun {
+  color: #ff9800;
+  filter: drop-shadow(0 0 4px rgba(255, 152, 0, 0.4));
+}
+
+.moon {
+  color: #a5b4fc;
+  filter: drop-shadow(0 0 4px rgba(165, 180, 252, 0.4));
+}
+
+.theme-toggle-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, var(--accent-warm), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.theme-toggle-btn:hover .theme-toggle-glow {
+  opacity: 0.15;
+}
+
+/* Adjust for scrolled state in Navbar if needed */
+.is-scrolled .theme-toggle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 100px;
+}

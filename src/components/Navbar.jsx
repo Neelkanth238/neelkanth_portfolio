@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -112,7 +113,7 @@ export default function Navbar() {
           </motion.nav>
 
           {/* Right Section */}
-          <motion.div layout transition={transition} className="nav-right" style={{ gap: isScrolled ? '0px' : '20px' }}>
+          <motion.div layout transition={transition} className="nav-right" style={{ gap: isScrolled ? '4px' : '12px' }}>
             {!isMenuOpen && (
               <motion.div 
                 layout 
@@ -149,6 +150,8 @@ export default function Navbar() {
                 </Link>
               </motion.div>
             )}
+
+            <ThemeToggle />
             
             <motion.button 
               layout

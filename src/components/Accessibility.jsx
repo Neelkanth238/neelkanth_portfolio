@@ -26,10 +26,10 @@ export default function NeurodiverseToggle() {
           z-index: 10001;
         }
         .toggle-btn {
-          background: rgba(255, 255, 255, 0.05);
+          background: var(--bg-color);
           backdrop-filter: blur(10px);
           border: 1px solid var(--border-color);
-          color: white;
+          color: var(--text-color);
           padding: 0.5rem 1rem;
           border-radius: 100px;
           display: flex;
@@ -40,10 +40,11 @@ export default function NeurodiverseToggle() {
           text-transform: uppercase;
           letter-spacing: 0.05em;
           transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .toggle-btn.active {
-          border-color: var(--accent-color);
-          color: var(--accent-color);
+          border-color: var(--accent-warm);
+          color: var(--accent-warm);
         }
         .dot {
           width: 8px;
@@ -52,7 +53,7 @@ export default function NeurodiverseToggle() {
           border-radius: 50%;
         }
         .toggle-btn:hover {
-          background: rgba(255, 255, 255, 0.1);
+          background: var(--border-subtle);
         }
       `}</style>
     </div>
