@@ -72,14 +72,20 @@ export default function Projects() {
           {/* Right Column: Sticky Image */}
           <div className="projects-right-column">
             <div className="projects-image-wrapper">
-              {archive.map((project, index) => (
-                <div 
-                  key={project.id} 
-                  className={`projects-image-container ${index === hoveredIndex ? 'is-active' : ''}`}
-                >
-                  <img src={project.image} alt={project.title} />
-                </div>
-              ))}
+              <span className="corner-line top-left"></span>
+              <span className="corner-line top-right"></span>
+              <span className="corner-line bottom-left"></span>
+              <span className="corner-line bottom-right"></span>
+              <div className="projects-image-clip">
+                {archive.map((project, index) => (
+                  <div 
+                    key={project.id} 
+                    className={`projects-image-container ${index === hoveredIndex ? 'is-active' : ''}`}
+                  >
+                    <img src={project.image} alt={project.title} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

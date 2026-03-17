@@ -184,7 +184,13 @@ export default function Navbar() {
               <span className="mobile-nav-text">{item.name}</span>
             </NavLink>
           ))}
-          <NavLink to="/contact" className="mobile-nav-a" onClick={closeMenu}>Contact</NavLink>
+          <NavLink 
+            to="/contact" 
+            className={({ isActive }) => isActive ? "mobile-nav-a active" : "mobile-nav-a"} 
+            onClick={closeMenu}
+          >
+            <span className="mobile-nav-text">Contact</span>
+          </NavLink>
         </nav>
       </div>
     </>
