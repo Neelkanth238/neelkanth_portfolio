@@ -286,9 +286,11 @@ export default function FloatingLines({
     const camera = new OrthographicCamera(-1, 1, 1, -1, 0, 1);
     camera.position.z = 1;
 
-    const renderer = new WebGLRenderer({ antialias: true, alpha: true });
+    // Performance: WebGL antialiasing is unnecessary for fragment shader math and costs performance
+    const renderer = new WebGLRenderer({ antialias: false, alpha: true });
     renderer.setClearColor(0x000000, 0);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    // Performance: Cap pixel ratio at 1.5 (or lower) to prevent massive lag on high-res displays
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
     container.appendChild(renderer.domElement);
@@ -421,9 +423,20 @@ export default function FloatingLines({
       renderer.domElement.addEventListener('pointerleave', handlePointerLeave);
     }
 
+    let isVisible = true;
+    const io = new IntersectionObserver((entries) => {
+      if (entries.length > 0) {
+        isVisible = entries[0].isIntersecting;
+      }
+    }, { threshold: 0 });
+    io.observe(container);
+
     let raf = 0;
     const renderLoop = () => {
       if (!active) return;
+      
+      raf = requestAnimationFrame(renderLoop);
+      if (!isVisible) return; // Performance: pause rendering when offscreen
 
       uniforms.iTime.value = clock.getElapsedTime();
 
@@ -441,7 +454,6 @@ export default function FloatingLines({
       }
 
       renderer.render(scene, camera);
-      raf = requestAnimationFrame(renderLoop);
     };
     renderLoop();
 
@@ -449,6 +461,7 @@ export default function FloatingLines({
       active = false;
 
       cancelAnimationFrame(raf);
+      io.disconnect();
 
       if (ro) ro.disconnect();
 

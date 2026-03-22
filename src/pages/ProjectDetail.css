@@ -184,8 +184,8 @@
 .pd-v6-image-wrapper {
   position: sticky;
   top: 10rem;
-  height: calc(100vh - 12rem);
   width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 4px;
   overflow: hidden;
   background: var(--border-color);
@@ -227,7 +227,9 @@
   .pd-v6-image-wrapper {
     position: relative;
     top: 0;
-    height: 60vh;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 }
 
@@ -236,6 +238,7 @@
     font-size: 2.5rem;
   }
   .pd-v6-image-wrapper {
-    height: 40vh;
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 }
