@@ -11,7 +11,8 @@
   --text-color-rgb: 13, 13, 13;
   --text-muted: #737373;
   --accent-color: #0d0d0d;
-  --accent-warm: #c45d3e; /* Reverting to original orange */
+  --accent-warm: #c45d3e;
+  /* Reverting to original orange */
   --border-color: #d6d6d6;
   --hairline: 1px solid var(--border-color);
   --font-sans: 'Chillax', sans-serif;
@@ -25,7 +26,9 @@
 
   /* Inverted Surfaces */
   --inverted-bg: var(--text-color);
+  --inverted-bg-rgb: var(--text-color-rgb);
   --inverted-text: var(--bg-color);
+  --inverted-text-rgb: var(--bg-color-rgb);
 
   --text-secondary: var(--text-color);
 }
@@ -42,7 +45,9 @@
 
   /* Inverted Surfaces */
   --inverted-bg: var(--text-color);
+  --inverted-bg-rgb: var(--text-color-rgb);
   --inverted-text: var(--bg-color);
+  --inverted-text-rgb: var(--bg-color-rgb);
 
   --text-secondary: var(--text-color);
 }
@@ -99,7 +104,10 @@ ul {
 }
 
 /* Typography Hierarchy */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -201,7 +209,8 @@ h1, h2, h3, h4 {
 
 .btn-monolith:hover {
   transform: translateY(-3px);
-  background-color: #FCED16; /* Brand Yellow */
+  background-color: #FCED16;
+  /* Brand Yellow */
   color: #000;
   box-shadow: 0 10px 30px rgba(252, 237, 22, 0.2);
   opacity: 1;
@@ -241,8 +250,17 @@ h1, h2, h3, h4 {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
 }
 
 /* Footer */
@@ -291,4 +309,4 @@ h1, h2, h3, h4 {
     gap: 1.5rem;
     text-align: center;
   }
-}
+}

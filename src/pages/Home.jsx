@@ -9,12 +9,12 @@ import './Home.css';
 
 export default function Home() {
   const { theme } = useTheme();
-  
+
   const isDark = theme === 'dark';
-  const lineColors = isDark 
-    ? ["#ffffff", "#e07a5f", "#ffffff"] 
+  const lineColors = isDark
+    ? ["#ffffff", "#e07a5f", "#ffffff"]
     : ["#0d0d0d", "#c45d3e", "#0d0d0d"];
-    
+
   const itemVars = {
     initial: { opacity: 0, y: 40, scale: 0.97 },
     animate: { opacity: 1, y: 0, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
@@ -46,7 +46,7 @@ export default function Home() {
               mixBlendMode="multiply"
             />
           </div>
-          
+
           <div className="hero-main-typography">
             <h1 className="display-1">
               Neelkanth <br />
