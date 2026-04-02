@@ -3,7 +3,6 @@ import { AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -33,8 +32,6 @@ function App() {
           </Routes>
         </AnimatePresence>
       </main>
-      
-      <Footer />
     </div>
   );
 }

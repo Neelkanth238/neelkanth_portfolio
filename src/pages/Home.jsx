@@ -5,6 +5,7 @@ import FloatingLines from '../components/FloatingLines';
 
 import { useTheme } from '../lib/ThemeContext';
 
+import { Layers, Database, Cpu, Github, Linkedin, Mail, Twitter, ArrowRight } from 'lucide-react';
 import './Home.css';
 
 export default function Home() {
@@ -60,8 +61,8 @@ export default function Home() {
           <div className="hero-sub-row">
             <div className="line-accent"></div>
             <p className="paragraph-lg">
-              Engineering robust systems where <span className="font-serif">performant</span> logic
-              meets exceptional design. Bridging the gap between the server and the screen.
+              Crafting <span className="font-serif">precise</span> digital experiences through thoughtful engineering.
+              I build systems that balance technical complexity with intuitive simplicity.
             </p>
           </div>
         </motion.section>
@@ -77,13 +78,13 @@ export default function Home() {
               whileInView="animate"
               viewport={{ once: true, amount: 0.1 }}
             >
-              <span className="section-label">System Status</span>
+              <span className="section-label">Availability</span>
               <div>
                 <p className="display-3" style={{ marginBottom: '1.25rem' }}>
-                  <span className="status-dot"></span>Active.
+                  <span className="status-dot"></span>Available.
                 </p>
                 <p className="paragraph-md">
-                  Currently accepting select architectural challenges and high-performance product developments.
+                  Currently focused on architecting scalable full-stack ecosystems and optimizing high-performance applications.
                 </p>
               </div>
             </motion.div>
@@ -96,71 +97,62 @@ export default function Home() {
               whileInView="animate"
               viewport={{ once: true, amount: 0.1 }}
             >
-              <span className="section-label" style={{ color: 'inherit', opacity: 0.35 }}>Core Philosophy</span>
-              <h2 className="display-2">Unified <br /> <span className="font-serif">Logic</span>.</h2>
+              <span className="section-label" style={{ color: 'inherit', opacity: 0.35 }}>Engineering Ethos</span>
+              <h2 className="display-2">Digital <br /> <span className="font-serif">Architecture</span>.</h2>
               <p>
-                A digital product is a singular entity. I don't see frontends or backends — I see integrated systems where data flow and user interaction are one and the same.
+                I believe that exceptional software is born at the intersection of robust logic and human-centric design. My approach is to build integrated systems where performance is a feature, not an afterthought.
               </p>
             </motion.div>
 
-            {/* ─── Call to Action Cell ─── */}
+            {/* ─── Connect Cell ─── */}
             <motion.div
-              className="home-bento-cta"
+              className="home-bento-connect-box"
               variants={itemVars}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, amount: 0.1 }}
+              style={{ gridColumn: 'span 12' }}
             >
-              <span className="section-label">Quick Links</span>
-              <NavLink to="/projects" className="btn-monolith" style={{ width: '100%', justifyContent: 'center' }}>
-                Explore The Archive
-              </NavLink>
-              <NavLink to="/contact" className="btn-monolith-outline" style={{ width: '100%', justifyContent: 'center' }}>
-                Initiate Dialogue
-              </NavLink>
-              <NavLink to="/about" className="btn-monolith-outline" style={{ width: '100%', justifyContent: 'center' }}>
-                About Me
-              </NavLink>
-            </motion.div>
+              <div className="connect-card-gradient"></div>
+              
+              <div className="connect-content">
+                <div className="connect-text-side">
+                  <span className="section-label" style={{ color: '#fff', opacity: 0.5 }}>Availability</span>
+                  <h2 className="connect-headline">
+                    Let's <span className="font-serif">Connect</span>
+                  </h2>
+                  <p className="connect-subtext">
+                    I'm currently open to new collaborations and strategic opportunities.
+                    Whether you have a specific project in mind or just want to say hello—reach out.
+                  </p>
+                  
+                  <div className="social-links">
+                    <a href="https://github.com" target="_blank" rel="noreferrer" className="social-icon">
+                      <Github size={20} />
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="social-icon">
+                      <Linkedin size={20} />
+                    </a>
+                    <a href="mailto:hello@example.com" className="social-icon">
+                      <Mail size={20} />
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noreferrer" className="social-icon">
+                      <Twitter size={20} />
+                    </a>
+                  </div>
+                </div>
 
-            {/* ─── Featured Projects Cell ─── */}
-            <motion.div
-              className="home-bento-projects"
-              variants={itemVars}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <span className="section-label">Featured Systems</span>
-              <div className="mini-project-list">
-                <div className="mini-project-row">
-                  <div>
-                    <h3 className="mini-project-title">MRS / Metro Rail System</h3>
-                    <p className="mini-project-role">Full Stack &amp; Android Development</p>
-                  </div>
-                  <span className="mini-project-year">2024</span>
+                <div className="connect-action-side">
+                  <NavLink to="/contact" className="premium-connect-btn">
+                    <span>Start a Project</span>
+                    <ArrowRight size={20} className="btn-arrow" />
+                  </NavLink>
                 </div>
-                <div className="mini-project-row">
-                  <div>
-                    <h3 className="mini-project-title">IMS / Inventory Management</h3>
-                    <p className="mini-project-role">Full Stack Development</p>
-                  </div>
-                  <span className="mini-project-year">2023</span>
-                </div>
-                <div className="mini-project-row">
-                  <div>
-                    <h3 className="mini-project-title">CRS / Car Rental System</h3>
-                    <p className="mini-project-role">Full Stack Development</p>
-                  </div>
-                  <span className="mini-project-year">2023</span>
-                </div>
-                <div className="mini-project-row">
-                  <div>
-                    <h3 className="mini-project-title">Budget Bloom / Money Management</h3>
-                    <p className="mini-project-role">Frontend Development</p>
-                  </div>
-                  <span className="mini-project-year">2024</span>
-                </div>
+              </div>
+
+              <div className="connect-visual-element">
+                {/* A subtle abstract shape or glow */}
+                <div className="abstract-glow"></div>
               </div>
             </motion.div>
           </div>

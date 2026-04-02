@@ -12,6 +12,7 @@
   --text-muted: #737373;
   --accent-color: #0d0d0d;
   --accent-warm: #c45d3e;
+  --accent-warm-rgb: 196, 93, 62;
   /* Reverting to original orange */
   --border-color: #d6d6d6;
   --hairline: 1px solid var(--border-color);
@@ -42,6 +43,7 @@
   --accent-color: #ffffff;
   --border-color: #262626;
   --accent-warm: #e07a5f;
+  --accent-warm-rgb: 224, 122, 95;
 
   /* Inverted Surfaces */
   --inverted-bg: var(--text-color);
@@ -309,4 +311,4 @@ h4 {
     gap: 1.5rem;
     text-align: center;
   }
-}
+}
