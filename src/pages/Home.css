@@ -92,11 +92,11 @@
   background-color: #0d0d0d;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 5rem;
+  padding: 3rem 4rem;
   position: relative;
   overflow: hidden;
   color: #ffffff;
-  min-height: 500px;
+  min-height: 350px;
   display: flex;
   align-items: center;
 }
@@ -127,18 +127,18 @@
 }
 
 .connect-headline {
-  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 600;
   line-height: 0.95;
-  margin: 1rem 0 2rem;
+  margin: 0.75rem 0 1.5rem;
   letter-spacing: -0.04em;
 }
 
 .connect-subtext {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.5;
   opacity: 0.6;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-weight: 500;
 }
 
@@ -175,8 +175,8 @@
 .premium-connect-btn {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem 3rem;
+  gap: 1.25rem;
+  padding: 1.25rem 2.5rem;
   background-color: #fff;
   color: #000;
   border-radius: 100px;

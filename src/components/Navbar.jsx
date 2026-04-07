@@ -38,7 +38,7 @@ export default function Navbar() {
   return (
     <>
       <header className={`nav-wrapper ${isMenuOpen ? 'menu-open' : ''}`}>
-        <motion.div 
+        <motion.div
           layout
           transition={transition}
           className={`nav-container ${isScrolled ? 'is-scrolled' : ''}`}
@@ -51,21 +51,21 @@ export default function Navbar() {
           }}
         >
           {/* Logo Section */}
-          <motion.div 
-            layout 
-            transition={transition} 
+          <motion.div
+            layout
+            transition={transition}
             className="nav-left"
             whileHover="hover"
             whileTap="tap"
           >
-            <Link to="/" className="logo-block" onClick={closeMenu} style={{ 
+            <Link to="/" className="logo-block" onClick={closeMenu} style={{
               borderRadius: isScrolled ? '100px' : '12px',
               width: isScrolled ? '36px' : '44px',
               height: isScrolled ? '36px' : '44px'
             }}>
-              <motion.span 
-                layout 
-                transition={transition} 
+              <motion.span
+                layout
+                transition={transition}
                 className="logo-text"
                 style={{ fontSize: isScrolled ? '12px' : '18px' }}
                 variants={{
@@ -73,27 +73,27 @@ export default function Navbar() {
                   tap: { scale: 0.9 }
                 }}
               >
-                NM
+
               </motion.span>
             </Link>
           </motion.div>
 
           {/* Centered Pill */}
-          <motion.nav 
-            layout 
-            transition={transition} 
+          <motion.nav
+            layout
+            transition={transition}
             className="nav-center"
-            style={{ 
+            style={{
               flex: isScrolled ? '0 1 auto' : '1 1 auto',
             }}
           >
             <motion.div layout transition={transition} className="nav-pill">
               <div className="nav-links" onMouseLeave={() => setHoveredLink(null)}>
                 {menuItems.map((item, idx) => (
-                  <NavLink 
+                  <NavLink
                     key={item.name}
-                    to={item.path} 
-                    className={({ isActive }) => 
+                    to={item.path}
+                    className={({ isActive }) =>
                       `nav-a ${isActive ? 'active' : ''} ${displayIndex === idx ? 'has-pill' : ''}`
                     }
                     onMouseEnter={() => setHoveredLink(idx)}
@@ -115,8 +115,8 @@ export default function Navbar() {
           {/* Right Section */}
           <motion.div layout transition={transition} className="nav-right" style={{ gap: isScrolled ? '4px' : '12px' }}>
             {!isMenuOpen && (
-              <motion.div 
-                layout 
+              <motion.div
+                layout
                 transition={transition}
                 whileHover="hover"
                 whileTap="tap"
@@ -126,10 +126,10 @@ export default function Navbar() {
                   borderRadius: isScrolled ? '100px' : '10px',
                   padding: isScrolled ? '0 15px' : '0 24px'
                 }}>
-                  <motion.span 
-                    layout 
-                    transition={transition} 
-                    className="cta-text" 
+                  <motion.span
+                    layout
+                    transition={transition}
+                    className="cta-text"
                     style={{ fontSize: isScrolled ? '12px' : '14px' }}
                     variants={{
                       hover: { scale: 1.05 }
@@ -138,8 +138,8 @@ export default function Navbar() {
                     Get in touch
                   </motion.span>
                   <div className="cta-dot-wrapper">
-                    <motion.div 
-                      layout 
+                    <motion.div
+                      layout
                       className="cta-dot"
                       variants={{
                         hover: { scale: 1.5 }
@@ -152,8 +152,8 @@ export default function Navbar() {
             )}
 
             <ThemeToggle />
-            
-            <motion.button 
+
+            <motion.button
               layout
               transition={transition}
               whileHover={{ scale: 1.1, rotate: 90 }}
@@ -175,18 +175,18 @@ export default function Navbar() {
       <div className={`mobile-overlay ${isMenuOpen ? 'open' : ''}`}>
         <nav className="mobile-nav-links">
           {menuItems.map((item) => (
-            <NavLink 
-              key={item.name} 
-              to={item.path} 
+            <NavLink
+              key={item.name}
+              to={item.path}
               className={({ isActive }) => isActive ? "mobile-nav-a active" : "mobile-nav-a"}
               onClick={closeMenu}
             >
               <span className="mobile-nav-text">{item.name}</span>
             </NavLink>
           ))}
-          <NavLink 
-            to="/contact" 
-            className={({ isActive }) => isActive ? "mobile-nav-a active" : "mobile-nav-a"} 
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => isActive ? "mobile-nav-a active" : "mobile-nav-a"}
             onClick={closeMenu}
           >
             <span className="mobile-nav-text">Contact</span>

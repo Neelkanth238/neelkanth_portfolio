@@ -230,16 +230,16 @@ function hexToVec3(hex) {
 
 export default function FloatingLines({
   linesGradient,
-  enabledWaves = ['middle', 'bottom'],
-  lineCount = [2],
-  lineDistance = [50],
-  topWavePosition,
+  enabledWaves = ['top', 'middle', 'bottom'],
+  lineCount = [22],
+  lineDistance = [100],
+  topWavePosition = { x: 1, y: -1, rotate: -0.7 },
   middleWavePosition = { x: 1, y: -1, rotate: -0.7 },
-  bottomWavePosition = { x: -0.3, y: -1.5, rotate: -1 },
-  animationSpeed = 1,
+  bottomWavePosition = { x: 0, y: 0.5, rotate: 0.5 },
+  animationSpeed = 0.5,
   interactive = false,
-  bendRadius = 5.0,
-  bendStrength = -0.5,
+  bendRadius = 10,
+  bendStrength = 5,
   mouseDamping = 0.05,
   parallax = true,
   parallaxStrength = 0.2,
@@ -434,7 +434,7 @@ export default function FloatingLines({
     let raf = 0;
     const renderLoop = () => {
       if (!active) return;
-      
+
       raf = requestAnimationFrame(renderLoop);
       if (!isVisible) return; // Performance: pause rendering when offscreen
 

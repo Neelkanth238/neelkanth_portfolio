@@ -16,10 +16,6 @@ export default function About() {
   return (
     <PageTransition>
       <div className="about-monolith container">
-        <header className="about-header-v4">
-          <span className="section-label">Institutional Profile</span>
-          <h1 className="display-1">Beyond the <br /> <span className="font-serif">Systems</span>.</h1>
-        </header>
 
         <div className="bento-grid-wrapper">
           <div className="bento-blob-bg"></div>
@@ -53,8 +49,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.1 }}
             >
               <div className="bento-image-wrapper group">
-                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200" alt="Neelkanth" className="grayscale-img" />
-                <div className="image-overlay"></div>
+                <img src="/profile.png" alt="Neelkanth Mayani" className="grayscale-img" />
               </div>
             </motion.div>
 
@@ -95,18 +90,18 @@ export default function About() {
             >
               {/* Decorative SVG pattern */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <motion.path 
-                  d="M-20,120 Q50,-20 120,50" 
-                  stroke="rgba(255,255,255,0.2)" 
+                <motion.path
+                  d="M-20,120 Q50,-20 120,50"
+                  stroke="rgba(255,255,255,0.2)"
                   strokeWidth="3"
                   fill="none"
                   variants={drawVars}
                   initial="initial"
                   whileInView="animate"
                 />
-                <motion.path 
-                  d="M0,100 Q80,20 100,100" 
-                  stroke="rgba(255,255,255,0.1)" 
+                <motion.path
+                  d="M0,100 Q80,20 100,100"
+                  stroke="rgba(255,255,255,0.1)"
                   strokeWidth="1"
                   fill="none"
                   variants={drawVars}
@@ -115,12 +110,12 @@ export default function About() {
                 />
               </svg>
               <div className="relative z-10 flex flex-col justify-end h-full">
-                <span className="stat-number">4<motion.span 
-                  initial={{ opacity: 0, scale: 0 }} 
+                <span className="stat-number">4<motion.span
+                  initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1, transition: { delay: 0.8, type: 'spring' } }}
                   style={{ display: 'inline-block', color: 'rgba(255,255,255,0.8)' }}>+</motion.span>
                 </span>
-                <span className="stat-label">Years of <br/>Engineering</span>
+                <span className="stat-label">Years of <br />Engineering</span>
               </div>
             </motion.div>
 
@@ -132,7 +127,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.1 }}
             >
               <span className="section-label">Technical Inventory</span>
-              
+
               <div className="skills-group mt-4">
                 <span className="skills-group-title">Frontend</span>
                 <div className="tech-pills">

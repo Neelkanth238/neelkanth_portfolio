@@ -1,3 +1,8 @@
+.about-monolith {
+  padding-top: 12rem !important;
+  margin-top: 2rem;
+}
+
 .about-header-v4 {
   padding: 8rem 0 4rem;
 }
@@ -5,7 +10,8 @@
 .bento-grid-about {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1px;
+  row-gap: 1px;
+  column-gap: 0;
   background-color: var(--border-color);
   border: var(--hairline);
   margin-bottom: 4rem;
@@ -185,21 +191,15 @@
 .grayscale-img {
   filter: grayscale(100%);
   transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  object-position: center 20%; /* Focus on the face/top of head */
 }
 .image-card:hover .grayscale-img {
   filter: grayscale(0%);
   transform: scale(1.05);
 }
-.image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 40%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-.image-card:hover .image-overlay {
-  opacity: 1;
+.image-card:hover .grayscale-img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
 .availability-badge {
@@ -449,16 +449,38 @@
 }
 
 
+@media (max-width: 1200px) {
+  .bento-item {
+    padding: 2.5rem;
+  }
+  .display-2 {
+    font-size: 3.2rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .cert-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .bento-item {
+    padding: 2rem;
+  }
+  /* Maintain grid columns at 1024px to keep the bento layout clean */
+  .bento-grid-about {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
   .bento-grid-about {
     grid-template-columns: 1fr;
   }
   .col-span-12, .col-span-8, .col-span-6, .col-span-5, .col-span-4, .col-span-3, .col-span-2, .row-span-2 {
     grid-column: span 1;
     grid-row: span 1;
+  }
+  .image-card {
+    height: 600px;
   }
   .skills-grid-bento {
     grid-template-columns: 1fr 1fr;

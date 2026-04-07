@@ -10,6 +10,8 @@ import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Contact from './pages/Contact';
 
+import { ReactLenis } from 'lenis/react';
+
 function App() {
   const location = useLocation();
 
@@ -18,21 +20,23 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <div className="page-wrapper modernist-archive">
-      <Navbar />
-      
-      <main className="main-content">
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:id" element={<ProjectDetail />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </AnimatePresence>
-      </main>
-    </div>
+    <ReactLenis root>
+      <div className="page-wrapper modernist-archive">
+        <Navbar />
+        
+        <main className="main-content">
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:id" element={<ProjectDetail />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </AnimatePresence>
+        </main>
+      </div>
+    </ReactLenis>
   );
 }
 

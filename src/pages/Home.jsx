@@ -113,8 +113,21 @@ export default function Home() {
               viewport={{ once: true, amount: 0.1 }}
               style={{ gridColumn: 'span 12' }}
             >
+              <div className="hero-background" style={{ opacity: 0.6 }}>
+                <FloatingLines
+                  linesGradient={["#0d0d0d", "#c45d3e", "#0d0d0d"]}
+                  lineCount={12}
+                  lineDistance={60}
+                  animationSpeed={0.3}
+                  interactive={false}
+                  mixBlendMode="screen"
+                  middleWavePosition={{ x: 0, y: -0.4, rotate: 0.2 }}
+                  bottomWavePosition={{ x: 2.5, y: -0.9, rotate: 0.2 }}
+                />
+              </div>
+
               <div className="connect-card-gradient"></div>
-              
+
               <div className="connect-content">
                 <div className="connect-text-side">
                   <span className="section-label" style={{ color: '#fff', opacity: 0.5 }}>Availability</span>
@@ -125,7 +138,7 @@ export default function Home() {
                     I'm currently open to new collaborations and strategic opportunities.
                     Whether you have a specific project in mind or just want to say hello—reach out.
                   </p>
-                  
+
                   <div className="social-links">
                     <a href="https://github.com" target="_blank" rel="noreferrer" className="social-icon">
                       <Github size={20} />
