@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
+import { useTheme } from '../lib/ThemeContext';
 import './About.css';
 
 export default function About() {
+  const { theme } = useTheme();
   const itemVars = {
     initial: { opacity: 0, y: 40, scale: 0.97 },
     animate: { opacity: 1, y: 0, scale: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
@@ -49,7 +51,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.1 }}
             >
               <div className="bento-image-wrapper group">
-                <img src="/profile.png" alt="Neelkanth Mayani" className="grayscale-img" />
+                <img src={theme === 'dark' ? "/profileD.png" : "/profileL.png"} alt="Neelkanth Mayani" className="grayscale-img" />
               </div>
             </motion.div>
 

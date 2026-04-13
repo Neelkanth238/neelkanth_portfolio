@@ -73,7 +73,7 @@ export default function Navbar() {
                   tap: { scale: 0.9 }
                 }}
               >
-
+                NM
               </motion.span>
             </Link>
           </motion.div>
